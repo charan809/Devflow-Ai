@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task | DevFlow</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h2 style="text-align: center; color: #007bff;">🚀 Create New Task</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="title">Task Title</label>
+                <input type="text" id="title" name="title" placeholder="e.g., Integrate Payment Gateway" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Task Description</label>
+                <textarea id="description" name="description" placeholder="Briefly explain the goal..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="complexity">Complexity Level (1-5)</label>
+                <select id="complexity" name="complexity">
+                    <option value="1">1 - Very Easy (Minor Tweak)</option>
+                    <option value="2">2 - Easy (Simple Logic)</option>
+                    <option value="3" selected>3 - Medium (Standard Feature)</option>
+                    <option value="4">4 - Hard (Complex Logic/API)</option>
+                    <option value="5">5 - Critical (Architecture Change)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Generate AI Plan & Save</button>
+        </form>
+        <p style="text-align: center; margin-top: 15px;">
+            <a href="{% url 'dashboard' %}" style="color: #666; font-size: 0.9rem;">← Back to Dashboard</a>
+        </p>
+    </div>
+</body>
+</html>
