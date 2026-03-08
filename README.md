@@ -25,7 +25,7 @@ Frontend: HTML5, CSS3 (Custom Styles)
 Clone the repository:
 
 Bash
-git clone https://github.com/yourusername/DevFlow.git
+git clone [https://github.com/charan809/Devflow-Ai.git]
 
 cd DevFlow
 Install dependencies:
